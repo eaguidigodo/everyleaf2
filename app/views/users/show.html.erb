@@ -1,0 +1,20 @@
+<h1><%= @user.username %> page of</h1>
+<p>E-mail address:<%= @user.email %></p>
+
+<h2> <%= @user.username %>' tasks: </h2>
+<% if @task %>
+<% @tasks.each do |task| %>
+    <tr>
+      <td class="task_row"><%= task.name %></td>  
+      <td><%= task.detail %></td>
+      <td><%= task.status %></td>
+      <td><%= task.deadline %></td>
+      <td><%= task.priority %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+<%= link_to "Back", tasks_path %>
+<% else %>
+<p> No tasks for this user </p>
+<% end %>
